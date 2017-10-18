@@ -9,9 +9,7 @@ public class Main {
     public static void main(String[] args){
         Random randomNumber = new Random();
         int number = randomNumber.nextInt((100 - 1) + 1) + 1;
-
-        System.out.println(number);
-
+        
         Scanner scanner = new Scanner(System.in);
         System.out.println("Guess a number between 1 and 100.");
         int initialInput = scanner.nextInt();
