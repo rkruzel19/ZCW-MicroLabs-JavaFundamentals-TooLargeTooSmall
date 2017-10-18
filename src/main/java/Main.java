@@ -8,11 +8,19 @@ public class Main {
 
     public static void main(String[] args){
         Random randomNumber = new Random();
-        int number = randomNumber.nextInt((10 - 1) + 1) + 1;
+        int number = randomNumber.nextInt((100 - 1) + 1) + 1;
+
+        System.out.println(number);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Guess a number between 1 and 10.");
+        System.out.println("Guess a number between 1 and 100.");
         int initialInput = scanner.nextInt();
+        //int secondaryInput = initialInput;
+
+        while (initialInput < 1 || initialInput > 100) {
+            System.out.println("Your guess is not between 1 and 100, please try again.");
+            initialInput = scanner.nextInt();
+        }
         int secondaryInput = initialInput;
 
         int guessCounter = 1;
@@ -26,6 +34,10 @@ public class Main {
             }
 
             secondaryInput = scanner.nextInt();
+            while (secondaryInput < 1 || secondaryInput > 100) {
+                System.out.println("Your guess is not between 1 and 100, please try again.");
+                secondaryInput = scanner.nextInt();
+            }
             if (secondaryInput != initialInput) {
                 guessCounter++;
             }
